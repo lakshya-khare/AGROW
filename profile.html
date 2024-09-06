@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings</title>
+    <style> {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      header {
+        background-color: #43ab17;
+        color: white;
+        padding: 50px;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+      }
+      
+      .profile-section {
+        text-align: center;
+        margin-top: -60px;
+        margin-bottom: 20px;
+      }
+      
+      .profile-pic {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 3px solid white;
+      }
+      
+      h3 {
+        margin: 10px 0 5px;
+      }
+      
+      p {
+        margin: 0;
+        color: #555;
+      }
+
+      .settings-section {
+        padding: 10px 0;
+      }
+      
+      h4 {
+        margin-top: 20px;
+        color: #333;
+      }
+      
+      .setting-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eaeaea;
+      }
+      
+      a {
+        color: #169c53;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 34px;
+        height: 20px;
+      }
+      
+      .toggle-switch input {
+        display: none;
+      }
+      
+      .toggle-switch label {
+        position: absolute;
+        cursor: pointer;
+        background-color: #ccc;
+        border-radius: 34px;
+        transition: background-color 0.3s;
+        width: 100%;
+        height: 100%;
+      }
+      
+      .toggle-switch label:before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: white;
+        top: 3px;
+        left: 3px;
+        transition: all 0.3s;
+      }
+      
+      input:checked + label {
+        background-color: #169c53;
+      }
+      
+      input:checked + label:before {
+        transform: translateX(14px);
+      }
+
+                 /* Bottom Navigation Bar */
+        .bottom-nav {
+            background-color: #ffffff;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .nav-item.active .icon {
+            color: #00C853;
+        }
+
+        .nav-item .icon {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .central-btn {
+            background-color: #43ab17;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .central-btn .icon {
+            font-size: 28px;
+            color: white;
+        }
+
+        .bottom-nav-space {
+            height: 80px; /* Spacing for fixed bottom nav */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Profile</h2>
+        </header>
+        <div class="profile-section">
+            <img href="assets/profile.jpg" alt="Profile Image" class="profile-pic">
+            <h3>Lakshya</h3>
+            <p>lakshya@agrow.com</p>
+        </div>
+
+        <div class="settings-section">
+            <h4>General Settings</h4>
+            <div class="setting-item">
+              <a href="#">Auto Farm</a>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="theme-toggle" checked>
+                    <label for="theme-toggle"></label>
+                </div>
+            </div>
+
+            <div class="setting-item">
+                <a href="#">Change Password</a>
+            </div>
+
+            <div class="setting-item">
+                <a href="#">Language</a>
+            </div>
+
+            <h4>Information</h4>
+            <div class="setting-item">
+                <a href="#">About App</a>
+            </div>
+
+            <div class="setting-item">
+                <a href="#">Terms & Conditions</a>
+            </div>
+
+            <div class="setting-item">
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="setting-item">
+                <a href="#">Share This App</a>
+            </div>
+
+            <div class="setting-item">
+              <a href="#">Log Out</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+<div class="bottom-nav-space"></div>
+<div class="bottom-nav">
+    <div class="nav-item" onclick="navigateTo('home.html')">
+        <span class="icon">&#x1F3E0;</span>
+        <p>Home</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('market.html')">
+        <span class="icon">&#x1F50D;</span>
+        <p>Search</p>
+    </div>
+    <div class="central-btn" onclick="navigateTo('stats.html')">
+        <span class="icon">&#128752;</span>
+    </div>
+    <div class="nav-item" onclick="navigateTo('auto.html')">
+    <span class="icon">&#9881;</span>
+    <p>Settings</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('profile.html')">
+        <span class="icon">&#x1F464;</span>
+        <p>Profile</p>
+    </div>
+</div>
+
+<script>
+    // Navigation function
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+</script>
+</body>
+</html>
+

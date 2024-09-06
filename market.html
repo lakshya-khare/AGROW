@@ -16,10 +16,8 @@
             <footer class="app-footer">
                 <!-- Cart Icon -->
     <div class="cart-container">
-        <a href="/cart" class="cart-icon">
-            <img src="" alt="Cart">
-            <span class="cart-count">3</span> <!-- Number of items in the cart -->
-        </a>
+      <span class="icon">&#128722;</span>
+        
     </div>
             </footer>
         </header>
@@ -27,10 +25,11 @@
             <section class="category-section">
                 <h2>Choose by Category</h2>
                 <div class="category-container">
-                    <img src="https://thumbs.dreamstime.com/b/fruit-vegetables-7134854.jpg" alt="Category 1">
-                    <img src="https://static.vecteezy.com/system/resources/previews/029/628/395/large_2x/studio-shot-of-various-fruits-and-vegetables-isolated-on-black-background-top-view-high-resolution-products-free-photo.jpeg" alt="Category 2">
-                    <img src="https://www.itoozhiayurveda.in/wp-content/uploads/2023/10/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls-1024x696.jpg" alt="Category 3">
-                    <img src="https://marvel-b1-cdn.bc0a.com/f00000000229348/www.silversneakers.com/wp-content/uploads/2024/01/WholeGrains_835833518-1024x683.jpg" alt="Category 4">
+                     <div class="product-grid">
+                    <img src="https://5.imimg.com/data5/HO/IF/MY-14607085/manure-1-1000x1000.jpg" alt="Category 1"><h3>Manures</h3><br><p>discription</p>
+                    <img src="https://tractordekho.in/blog/wp-content/uploads/2023/10/Cultivators.jpg" alt="Category 2"><h3>Equipments</h3>
+                    <img src="https://refshape.com/blogs/wp-content/uploads/2024/02/hero-agri-fertilizers.jpg" alt="Category 3"><h3>fertilizers</h3>
+                    <img src="https://marvel-b1-cdn.bc0a.com/f00000000229348/www.silversneakers.com/wp-content/uploads/2024/01/WholeGrains_835833518-1024x683.jpg" alt="Category 4"><h3>Seeds</h3>
                 </div>
             </section>
 
@@ -38,24 +37,44 @@
                 <h2>Popular Products</h2>
                 <div class="product-grid">
                     <div class="product-card">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Green Peppers">
-                        <h3>Green Peppers</h3>
-                        <p>₹2000/ton</p>
+                        <img src="https://cdn.pixabay.com/photo/2024/01/15/17/03/ai-generated-8510539_1280.jpg" alt="Tomatoes">
+                        <h3>Pay As You Go</h3>
+                        <p>₹0 Pay As You Use</p>
                     </div>
                     <div class="product-card">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/20/06/03/ai-generated-8707879_1280.png" alt="Lentils">
-                        <h3>Lentils</h3>
-                        <p>₹4000/ton</p>
+                      <img src="https://marvel-b1-cdn.bc0a.com/f00000000229348/www.silversneakers.com/wp-content/uploads/2024/01/WholeGrains_835833518-1024x683.jpg" alt="Category 4">
+                        <h3>Seeds</h3>
+                        <p>Starting ₹2000</p>
                     </div>
                     <div class="product-card">
-                        <img src="https://www.crushpixel.com/big-static18/preview4/ripped-raw-red-apples-group-2853491.jpg" alt="Apples">
-                        <h3>Apples</h3>
-                        <p>₹3000/ton</p>
+                      <img src="https://refshape.com/blogs/wp-content/uploads/2024/02/hero-agri-fertilizers.jpg" alt="Category 3">
+                        <h3>fertilizers</h3>
+                        <p>Starting ₹400</p>
+                    </div>
+                    <div class="product-card">
+                      <img src="https://tractordekho.in/blog/wp-content/uploads/2023/10/Cultivators.jpg" alt="Category 2">
+                        <h3>Equipments</h3>
+                        <p>Starting ₹500</p>
+                    </div>
+                    <div class="product-card">
+                      <img src="https://5.imimg.com/data5/HO/IF/MY-14607085/manure-1-1000x1000.jpg" alt="Category 1">
+                        <h3>Manures</h3>
+                        <p>Starting ₹150</p>
                     </div>
                     <div class="product-card">
                         <img src="https://cdn.pixabay.com/photo/2024/01/15/17/03/ai-generated-8510539_1280.jpg" alt="Tomatoes">
-                        <h3>Tomatoes</h3>
+                        <h3>Vegetables</h3>
                         <p>₹1500/ton</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/15/17/03/ai-generated-8510539_1280.jpg" alt="Tomatoes">
+                        <h3>Tools</h3>
+                        <p>₹1500/ton</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/15/17/03/ai-generated-8510539_1280.jpg" alt="Tomatoes">
+                        <h3>Insecticides</h3>
+                        <p>Starting ₹150</p>
                     </div>
                 </div>
             </section>
@@ -63,7 +82,38 @@
 
     </div>
 
-    <script src="script.js"></script>
+<!-- Bottom Navigation Bar -->
+<div class="bottom-nav-space"></div>
+<div class="bottom-nav">
+    <div class="nav-item" onclick="navigateTo('home.html')">
+        <span class="icon">&#x1F3E0;</span>
+        <p>Home</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('market.html')">
+        <span class="icon">&#x1F50D;</span>
+        <p>Search</p>
+    </div>
+    <div class="central-btn" onclick="navigateTo('stats.html')">
+        <span class="icon">&#128752;</span>
+    </div>
+    <div class="nav-item" onclick="navigateTo('auto.html')">
+    <span class="icon">&#9881;</span>
+    <p>Settings</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('profile.html')">
+        <span class="icon">&#x1F464;</span>
+        <p>Profile</p>
+    </div>
+</div>
+
+    <script>
+
+    // Navigation function
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+        
+    </script>
 </body>
 </html>
 
@@ -100,11 +150,12 @@ body {
 }
 
 .search-bar {
+  
     width: 100%;
     display: flex;
     align-items: center;
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .search-bar input {
@@ -134,7 +185,7 @@ body {
 .category-container {
     display: flex;
     gap: 10px;
-    overflow-x: auto;
+    overflow-y: scroll;
 }
 
 .category-container img {
@@ -194,6 +245,59 @@ body {
     color: #00b386;
 }
 
+     /* Bottom Navigation Bar */
+         .bottom-nav {
+            background-color: #ffffff;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .nav-item.active .icon {
+            color: #00C853;
+        }
+
+        .nav-item .icon {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .central-btn {
+            background-color: #43ab17;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .central-btn .icon {
+            font-size: 28px;
+            color: white;
+        }
+
+        .bottom-nav-space {
+            height: 80px; /* Spacing for fixed bottom nav */
+        }
 
 </style>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrollable Home Page</title>
+    <title>Home</title>
     <style>
         * {
             margin: 0;
@@ -100,7 +100,7 @@
         .weather-details h4 {
             font-size: 18px;
             color: #f5a623;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
         }
 
         .market-section {
@@ -133,12 +133,65 @@
             margin-right: 10px;
         }
 
+         /* Bottom Navigation Bar */
+         .bottom-nav {
+            background-color: #ffffff;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .nav-item.active .icon {
+            color: #00C853;
+        }
+
+        .nav-item .icon {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .central-btn {
+            background-color: #43ab17;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .central-btn .icon {
+            font-size: 28px;
+            color: white;
+        }
+
+        .bottom-nav-space {
+            height: 80px; /* Spacing for fixed bottom nav */
+        }
     </style>
 </head>
 <body>
     <div class="app-container">
         <header class="app-header">
-            <h2>Hi! Raj &#128075;</h2>
+            <h2>Hi! Lakshya, Welcome back ! &#128075;</h2>
             <span class="notification-icon">&#128276;</span> <!-- Bell emoji -->
         </header>
 
@@ -157,10 +210,10 @@
                 </a>
 
                 <a href="https://example.com/contract-farming" class="info-card">
-                    <img src="https://via.placeholder.com/150x80" alt="Contract Farming" />
+                    <img src="https://coruzant.com/wp-content/uploads/2021/12/impact-technology-agriculture.jpg" alt="Contract Farming" />
                     <div class="info-text">
-                        <h3>Contract Farming</h3>
-                        <p>Grow crops for verified companies to make profits</p>
+                        <h3>Pay As You Go Farming</h3>
+                        <p>Try pay as you go farming for new tech for your farms</p>
                         <button class="call-btn">Get Call</button>
                     </div>
                 </a>
@@ -171,69 +224,97 @@
                 <div class="weather-info">
                     <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-1024.png" alt="Weather Icon" style="width: 50px; height: 50px;">
                     <div class="weather-details">
-                        <p>Akola, Maharashtra</p>
-                        <h4>23° Hazy Sunshine</h4>
-                        <p>High: 30°C / Low: 15°C</p>
+                        <p>Bhopal, Madhya Pradesh</p>
+                        <h3>23° Cloud<h3>
+                        <p>High: 32°C / Low: 23°C</p>
                     </div>
                 </div>
             </section>
             
 
-            <section class="market-section">
-                <h3>Market Views</h3>
+<section class="market-section">
+                <h3>Hot Sold Crop Market</h3>
                 <div class="market-info">
                     <a href="https://example.com/soybean" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Soybean" />
+                        <img src="https://png.pngtree.com/background/20230517/original/pngtree-soya-bean-is-commonly-used-in-traditional-cosmetic-picture-image_2640129.jpg" alt="Soybean" />
                         <p>Soybean</p>
                     </a>
-                    <a href="https://example.com/cotton" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Cotton" />
-                        <p>Cotton</p>
+                    <a href="https://example.com/mustard" class="market-item">
+                        <img src="https://img.freepik.com/premium-photo/photo-high-quality-details-piles-freshly-picked-corn-cob_933496-16751.jpg" alt="Corn" />
+                        <p>corn</p>
                     </a>
+                   
+                                      
+                                      
                     <a href="https://example.com/wheat" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Wheat" />
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/030/460/710/small/farro-graingraphy-with-copy-space-ai-generative-photo.jpg" alt="Wheat" />
                         <p>Wheat</p>
                     </a>
                     <a href="https://example.com/rice" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Rice" />
+                        <img src="https://media.istockphoto.com/id/153737841/photo/rice.jpg?s=612x612&w=0&k=20&c=lfO7iLT0UsDDzra0uBOsN1rvr2d5OEtrG2uwbts33_c=" alt="Rice" />
                         <p>Rice</p>
                     </a>
                     <a href="https://example.com/pulses" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Pulses" />
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/UT/FR/RM/118397383/indian-spices-factory-500x500.jpg" alt="Pulses" />
                         <p>Pulses</p>
                     </a>
                     <a href="https://example.com/maize" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Maize" />
-                        <p>Maize</p>
-                    </a>
-                    <a href="https://example.com/soybean" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Soybean" />
-                        <p>Soybean</p>
-                    </a>
-                    <a href="https://example.com/cotton" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Cotton" />
-                        <p>Cotton</p>
-                    </a>
-                    <a href="https://example.com/wheat" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Wheat" />
-                        <p>Wheat</p>
-                    </a>
-                    <a href="https://example.com/rice" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Rice" />
-                        <p>Rice</p>
-                    </a>
+                        <img src="https://thumbs.dreamstime.com/b/orange-branch-orange-tree-garden-49020867.jpg" alt="orange" />
+                        <p>Orange</p>
                     <a href="https://example.com/pulses" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Pulses" />
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/UT/FR/RM/118397383/indian-spices-factory-500x500.jpg" alt="Pulses" />
                         <p>Pulses</p>
                     </a>
                     <a href="https://example.com/maize" class="market-item">
-                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Maize" />
-                        <p>Maize</p>
+                        <img src="https://thumbs.dreamstime.com/b/orange-branch-orange-tree-garden-49020867.jpg" alt="orange" />
+                        <p>Orange</p>
+                    <a href="https://example.com/pulses" class="market-item">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2022/5/UT/FR/RM/118397383/indian-spices-factory-500x500.jpg" alt="Pulses" />
+                        <p>Pulses</p>
+                    </a>
+                    <a href="https://example.com/maize" class="market-item">
+                        <img src="https://thumbs.dreamstime.com/b/orange-branch-orange-tree-garden-49020867.jpg" alt="orange" />
+                        <p>Orange</p>
                     </a>
                     <!-- Add more market items as needed -->
                 </div>
             </section>
         </main>
     </div>
+
+<!-- Bottom Navigation Bar -->
+<div class="bottom-nav-space"></div>
+<div class="bottom-nav">
+    <div class="nav-item" onclick="navigateTo('home.html')">
+        <span class="icon">&#x1F3E0;</span>
+        <p>Home</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('market.html')">
+        <span class="icon">&#x1F50D;</span>
+        <p>Search</p>
+    </div>
+    <div class="central-btn" onclick="navigateTo('stats.html')">
+        <span class="icon">&#128752;</span>
+    </div>
+    <div class="nav-item" onclick="navigateTo('auto.html')">
+    <span class="icon">&#9881;</span>
+    <p>Settings</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('profile.html')">
+        <span class="icon">&#x1F464;</span>
+        <p>Profile</p>
+    </div>
+</div>
+
+    <script>
+
+    // Navigation function
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+        
+    </script>
+
+    
 </body>
 </html>
