@@ -34,10 +34,22 @@
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #00b386;
+            position: relative;
+        }
+
+        /* Space for image above title */
+        .header img {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: -30px;
+            left: calc(50% - 30px);
+            border-radius: 50%;
         }
 
         .header h1 {
             font-size: 22px;
+            margin-top: 40px; /* Adjusted to leave space for the image */
         }
 
         .weather-info {
@@ -48,15 +60,6 @@
             border-radius: 10px;
             margin: 20px;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .weather-info img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .weather-info div {
-            text-align: left;
         }
 
         .stats-container {
@@ -73,12 +76,6 @@
             text-align: center;
             cursor: pointer;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-box img {
-            width: 30px;
-            height: 30px;
-            margin-bottom: 10px;
         }
 
         .stat-box.good {
@@ -107,12 +104,21 @@
             transition: background-color 0.2s ease-in-out;
         }
 
+        /* Emoji styling */
+        .stat-box span {
+            font-size: 30px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
     </style>
 </head>
 <body>
     <div class="app-container">
         <!-- Header -->
         <div class="header">
+            <!-- Placeholder for the image -->
+            <img src="https://via.placeholder.com/60" alt="Garden Logo">
             <h1>Family Garden Kendari</h1>
             <p>Rain: 25°C | Humidity: 81% | Wind: 10km/h</p>
         </div>
@@ -132,37 +138,37 @@
         <!-- Stats Grid -->
         <div class="stats-container">
             <div class="stat-box good" onclick="openPage('temperature.html')">
-                <img src="https://via.placeholder.com/30" alt="Temperature">
+                <span>🌡️</span> <!-- Emoji for Temperature -->
                 <h3>Temperature</h3>
                 <p>31°C</p>
             </div>
 
             <div class="stat-box good" onclick="openPage('humidity.html')">
-                <img src="https://via.placeholder.com/30" alt="Humidity">
+                <span>💧</span> <!-- Emoji for Humidity -->
                 <h3>Humidity</h3>
                 <p>54%</p>
             </div>
 
             <div class="stat-box bad" onclick="openPage('moisture.html')">
-                <img src="https://via.placeholder.com/30" alt="Moisture">
+                <span>🌧️</span> <!-- Emoji for Moisture -->
                 <h3>Moisture</h3>
                 <p>100% - Bad</p>
             </div>
 
             <div class="stat-box good" onclick="openPage('tds.html')">
-                <img src="https://via.placeholder.com/30" alt="TDS">
+                <span>📏</span> <!-- Emoji for TDS -->
                 <h3>TDS</h3>
                 <p>736 - Good</p>
             </div>
 
             <div class="stat-box good" onclick="openPage('water.html')">
-                <img src="https://via.placeholder.com/30" alt="Water">
+                <span>🚰</span> <!-- Emoji for Water -->
                 <h3>Water</h3>
                 <p>7</p>
             </div>
 
             <div class="stat-box medium" onclick="openPage('ph.html')">
-                <img src="https://via.placeholder.com/30" alt="pH">
+                <span>⚗️</span> <!-- Emoji for pH -->
                 <h3>pH</h3>
                 <p>14 - Medium</p>
             </div>
