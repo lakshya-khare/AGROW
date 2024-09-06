@@ -26,7 +26,8 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            overflow-y: auto;
+            height: 90vh;
         }
 
         .header {
@@ -101,6 +102,55 @@
             cursor: pointer;
         }
 
+        /* Master Toggle Switch */
+        .master-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .master-toggle span img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background-color: #ccc;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .toggle-switch::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .toggle-switch.active {
+            background-color: #4CAF50;
+        }
+
+        .toggle-switch.active::before {
+            transform: translateX(26px);
+        }
+
         /* Toast message styling */
         .toast {
             visibility: hidden;
@@ -146,10 +196,10 @@
         </div>
 
         <div class="controls-container">
-            <!-- Master Toggle for Auto Mode -->
-            <div class="control-item">
-                <span><img src="https://img.icons8.com/color/48/000000/automation.png" alt="Automation"> Automation Mode</span>
-                <button onclick="toggleAllToAuto()">Activate</button>
+            <!-- Master Toggle for Automation Mode -->
+            <div class="master-toggle">
+                <span><img src="https://img.icons8.com/emoji/48/robot.png" alt="Automation"> Automation Mode</span>
+                <div class="toggle-switch" onclick="toggleMasterSwitch(this)"></div>
             </div>
 
             <!-- Control for Lamp -->
@@ -172,7 +222,7 @@
                 </select>
             </div>
 
-            <!-- Control for Lamp 2 -->
+            <!-- Add more elements to make it scrollable -->
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 2"> Lamp 2</span>
                 <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp 2')">
@@ -182,7 +232,6 @@
                 </select>
             </div>
 
-            <!-- Control for Lamp 3 -->
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 3"> Lamp 3</span>
                 <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp 3')">
@@ -192,7 +241,6 @@
                 </select>
             </div>
 
-            <!-- Control for Fan -->
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/fan.png" alt="Fan"> Fan</span>
                 <select class="control-dropdown" onchange="toggleSwitch(this, 'Fan')">
@@ -202,7 +250,6 @@
                 </select>
             </div>
 
-            <!-- Control for Water Pump -->
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Water Pump"> Water Pump</span>
                 <select class="control-dropdown" onchange="toggleSwitch(this, 'Water Pump')">
@@ -211,36 +258,42 @@
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
+
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Filter Water Pump"> Filter Water Pump</span>
+                <select class="control-dropdown" onchange="toggleSwitch(this, 'Filter Water Pump')">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
+
         </div>
+
     </div>
 
     <!-- Toast message -->
-    <div id="toast"></div>
+    <div id="toast" class="toast"></div>
 
     <script>
-        // Function to show the toast message when toggle changes
-        function toggleSwitch(element, controlName) {
-            let state = element.value;
-            showToast(`${controlName} is set to ${state}`);
+        function toggleMasterSwitch(element) {
+            element.classList.toggle('active');
+            let isActive = element.classList.contains('active');
+            showToast(isActive ? 'Automation mode ON' : 'Automation mode OFF');
         }
 
-        // Function to display toast message
+        function toggleSwitch(dropdown, controlName) {
+            let state = dropdown.value;
+            showToast(`${controlName} turned ${state}`);
+        }
+
         function showToast(message) {
-            let toast = document.getElementById("toast");
-            toast.className = "toast show";
+            let toast = document.getElementById('toast');
             toast.textContent = message;
-
-            // Hide the toast after 3 seconds
-            setTimeout(function () {
-                toast.className = toast.className.replace("show", "");
+            toast.className = 'toast show';
+            setTimeout(() => {
+                toast.className = toast.className.replace('show', '');
             }, 3000);
-        }
-
-        // Function to toggle all devices to "Auto Mode"
-        function toggleAllToAuto() {
-            let dropdowns = document.querySelectorAll('.control-dropdown');
-            dropdowns.forEach(dropdown => dropdown.value = "auto");
-            showToast("Farm is on automation mode");
         }
     </script>
 
