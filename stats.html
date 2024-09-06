@@ -43,7 +43,7 @@
         }
 
         .sensor-box {
-            background-color: #EAE7F8;
+            background-color:  #a3d67e;
             padding: 10px;
             border-radius: 10px;
             width: 100px;
@@ -54,7 +54,7 @@
         .sensor-box h4 {
             font-size: 14px;
             margin-bottom: 5px;
-            color: #4A148C;
+            color: #000000;
         }
 
         .sensor-box p {
@@ -64,7 +64,7 @@
         }
 
         .suggestions {
-            background-color: #EAE7F8;
+            background-color:  #a3d67e;
             padding: 10px;
             border-radius: 10px;
             width: 90%;
@@ -76,7 +76,7 @@
         .suggestions h4 {
             font-size: 14px;
             margin-bottom: 5px;
-            color: #4A148C;
+            color: #000000;
         }
 
         .suggestions p {
@@ -87,7 +87,7 @@
 
         /* Bottom Navigation Bar */
         .bottom-nav {
-            background-color: #000;
+            background-color: #ffffff;
             height: 60px;
             display: flex;
             justify-content: space-around;
@@ -99,7 +99,7 @@
 
         .nav-item {
             text-align: center;
-            color: white;
+            color: rgb(0, 0, 0);
             cursor: pointer;
         }
 
@@ -118,7 +118,7 @@
         }
 
         .central-btn {
-            background-color: #FF4081;
+            background-color: #43ab17;
             border-radius: 50%;
             width: 60px;
             height: 60px;
@@ -132,7 +132,7 @@
 
         .central-btn .icon {
             font-size: 28px;
-            color: black;
+            color: white;
         }
 
         .bottom-nav-space {
@@ -168,7 +168,7 @@
             <p id="temp">23°C</p>
         </div>
         <div class="sensor-box">
-            <h4>Temp</h4>
+            <h4>TDS</h4>
             <p id="temp">23°C</p>        
         </div>
     </div>
@@ -189,20 +189,20 @@
         <span class="icon">&#x1F3E0;</span>
         <p>Home</p>
     </div>
-    <div class="nav-item" onclick="navigateTo('market.html')">
+    <div class="nav-item" onclick="navigateTo('search.html')">
         <span class="icon">&#x1F50D;</span>
         <p>Search</p>
     </div>
-    <div class="central-btn" onclick="navigateTo('stats.html')">
+    <div class="central-btn" onclick="navigateTo('settings.html')">
         <span class="icon">&#9881;</span>
-    </div>
-    <div class="nav-item" onclick="navigateTo('auto.html')">
-    <span class="icon">&#9881;</span>
-    <p>Settings</p>
     </div>
     <div class="nav-item" onclick="navigateTo('profile.html')">
         <span class="icon">&#x1F464;</span>
-        <p>Profile</p>
+        <p href="profile.html">Profile</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('settings.html')">
+        <span class="icon">&#9881;</span>
+        <p>Settings</p>
     </div>
 </div>
 
@@ -214,6 +214,7 @@
         document.getElementById('humidity').textContent = Math.floor(Math.random() * 101) + '%';
         document.getElementById('temp').textContent = (Math.floor(Math.random() * 40) + 10) + '°C';
         document.getElementById('sunlight').textContent = Math.floor(Math.random() * 101) + '%';
+        document.getElementById('TDS').textContent = Math.floor(Math.random() * 101);
     }
 
     // Simulate updating every 5 seconds
