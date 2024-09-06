@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Scrollable Home Page</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +18,6 @@
             justify-content: center;
             overflow-x: hidden;
             margin-bottom: 50px;
-        
         }
 
         .app-container {
@@ -31,7 +30,7 @@
         }
 
         .app-header {
-            background-color: #169c53;
+            background-color: #00b386;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -75,7 +74,7 @@
         }
 
         .call-btn {
-            background-color: #169c53;
+            background-color: #00b386;
             color: white;
             border: none;
             padding: 5px 10px;
@@ -102,7 +101,7 @@
         .weather-details h4 {
             font-size: 18px;
             color: #f5a623;
-            margin-bottom: 0px;
+            margin-bottom: 5px;
         }
 
         .market-section {
@@ -188,6 +187,8 @@
         .bottom-nav-space {
             height: 80px; /* Spacing for fixed bottom nav */
         }
+
+
     </style>
 </head>
 <body>
@@ -198,17 +199,6 @@
         </header>
 
         <main>
-            <section class="weather-section">
-                <h3>Today's Weather</h3>
-                <div class="weather-info">
-                    <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-1024.png" alt="Weather Icon" style="width: 50px; height: 50px;">
-                    <div class="weather-details">
-                        <p>Bhopal, Madhya Pradesh</p>
-                        <h3>23° Cloud <br> High: 32°C / Low: 23°C </h3>
-                    </div>
-                </div>
-            </section>
-            
             <div style="text-align:; margin-top: 20px; margin-left: 20px;">
                 <h3>App Guide</h3>
             </div>
@@ -231,8 +221,19 @@
                     </div>
                 </a>
             </section>
-            
-<section class="market-section">
+
+            <section class="weather-section">
+                <h3>Today's Weather</h3>
+                <div class="weather-info">
+                    <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-1024.png" alt="Weather Icon" style="width: 50px; height: 50px;">
+                    <div class="weather-details">
+                        <h3>Bhopal, Madhya Pradesh</h3>
+                        <p>23° Cloudy Weather <br> High: 32°C / Low: 23°C </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="market-section">
                 <h3>Hot Sold Crop Market</h3>
                 <div class="market-info">
                     <a href="https://example.com/soybean" class="market-item">
@@ -260,11 +261,11 @@
                     </a>
                     <!-- Add more market items as needed -->
                 </div>
-            </section>    
+            </section>
         </main>
     </div>
-
-<!-- Bottom Navigation Bar -->
+    
+    <!-- Bottom Navigation Bar -->
 <div class="bottom-nav-space"></div>
 <div class="bottom-nav">
     <div class="nav-item" onclick="navigateTo('home.html')">
