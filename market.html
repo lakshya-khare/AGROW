@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produce Categories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button type="submit">&#128269;</button>
+            </div>
+            <footer class="app-footer">
+                <!-- Cart Icon -->
+    <div class="cart-container">
+        <a href="/cart" class="cart-icon">
+            <img src="" alt="Cart">
+            <span class="cart-count">3</span> <!-- Number of items in the cart -->
+        </a>
+    </div>
+            </footer>
+        </header>
+        <main>
+            <section class="category-section">
+                <h2>Choose by Category</h2>
+                <div class="category-container">
+                    <img src="https://thumbs.dreamstime.com/b/fruit-vegetables-7134854.jpg" alt="Category 1">
+                    <img src="https://static.vecteezy.com/system/resources/previews/029/628/395/large_2x/studio-shot-of-various-fruits-and-vegetables-isolated-on-black-background-top-view-high-resolution-products-free-photo.jpeg" alt="Category 2">
+                    <img src="https://www.itoozhiayurveda.in/wp-content/uploads/2023/10/set-pecan-pistachios-almond-peanut-cashew-pine-nuts-lined-up-assorted-nuts-dried-fruits-mini-different-bowls-1024x696.jpg" alt="Category 3">
+                    <img src="https://marvel-b1-cdn.bc0a.com/f00000000229348/www.silversneakers.com/wp-content/uploads/2024/01/WholeGrains_835833518-1024x683.jpg" alt="Category 4">
+                </div>
+            </section>
+
+            <section class="product-section">
+                <h2>Popular Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Green Peppers">
+                        <h3>Green Peppers</h3>
+                        <p>₹2000/ton</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/20/06/03/ai-generated-8707879_1280.png" alt="Lentils">
+                        <h3>Lentils</h3>
+                        <p>₹4000/ton</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://www.crushpixel.com/big-static18/preview4/ripped-raw-red-apples-group-2853491.jpg" alt="Apples">
+                        <h3>Apples</h3>
+                        <p>₹3000/ton</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/15/17/03/ai-generated-8510539_1280.jpg" alt="Tomatoes">
+                        <h3>Tomatoes</h3>
+                        <p>₹1500/ton</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 10px;
+    width: 85%;
+    background-color: transparent;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.category-section, .product-section {
+    padding: 20px;
+}
+
+.category-section h2, .product-section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.category-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.category-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.app-footer {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-footer nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+
+.app-footer nav a:hover {
+    color: #00b386;
+}
+
+
+</style>
+
+
+

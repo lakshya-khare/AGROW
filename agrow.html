@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrow Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFCF2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .logo img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="email"]::placeholder, input[type="password"]::placeholder {
+            color: #7a7a7a;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #4CAF50;
+        }
+
+        .login-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #45A049;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .forgot-password, .social-buttons {
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+            color: white;
+        }
+
+        .facebook-btn {
+            background-color: #4267B2;
+            color: white;
+        }
+
+        .google-btn:hover {
+            background-color: #c23321;
+        }
+
+        .facebook-btn:hover {
+            background-color: #35508f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="AGROW Farm Solutions">
+        </div>
+        <form class="login-form" id="loginForm">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">LOGIN</button>
+            <p id="error" class="error"></p>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+        <div class="social-buttons">
+            <button class="social-btn google-btn" onclick="googleSignIn()">Google Sign In</button>
+            <button class="social-btn facebook-btn" onclick="facebookSignIn()">Facebook Sign In</button>
+        </div>
+    </div>
+
+    <script>
+        // Array of valid user credentials
+        const validUsers = [
+            { email: "lakshyakhare@agrow.com", password: "agrow123" },
+            { email: "ayushikumari@agrow.com", password: "agrow123" },
+            { email: "niyati@agrow.com", password: "agrow123" }
+        ];
+
+        // Add event listener to the form
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const errorElement = document.getElementById("error");
+
+            // Check if entered credentials match any user in the array
+            const user = validUsers.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                // Redirect to the dashboard (or another page)
+                window.location.href = "stats.html";
+            } else {
+                // Display error message
+                errorElement.textContent = "Invalid email or password. Please try again.";
+            }
+        });
+
+        // Google Sign In (placeholder function)
+        function googleSignIn() {
+            alert("Google Sign In is not implemented in this example.");
+        }
+
+        // Facebook Sign In (placeholder function)
+        function facebookSignIn() {
+            alert("Facebook Sign In is not implemented in this example.");
+        }
+    </script>
+
+</body>
+</html>

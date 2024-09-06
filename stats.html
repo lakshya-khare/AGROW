@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrow Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fcfcfc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding-top: 20px;
+        }
+
+        .crop {
+            height: 250px;
+            margin-bottom: 20px;
+        }
+
+        .sensor-data {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .sensor-box {
+            background-color: #EAE7F8;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .sensor-box h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #4A148C;
+        }
+
+        .sensor-box p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .suggestions {
+            background-color: #EAE7F8;
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
+            height: 400px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .suggestions h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #4A148C;
+        }
+
+        .suggestions p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            background-color: #000;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-item.active .icon {
+            color: #00C853;
+        }
+
+        .nav-item .icon {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .central-btn {
+            background-color: #FF4081;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .central-btn .icon {
+            font-size: 28px;
+            color: black;
+        }
+
+        .bottom-nav-space {
+            height: 80px; /* Spacing for fixed bottom nav */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <img class="crop" src="https://pbs.twimg.com/media/GWsmRNFXYAAHpc0?format=jpg&name=small " alt="Crop Image">
+
+    <div class="sensor-data">
+        <div class="sensor-box">
+            <h4>Sunlight</h4>
+            <p id="sunlight">60%</p>
+        </div>
+        <div class="sensor-box">
+            <h4>PH Levels</h4>
+            <p id="ph">60%</p>
+        </div>
+        <div class="sensor-box">
+            <h4>Moisture</h4>
+            <p id="moisture">40%</p>
+        </div>
+        <div class="sensor-box">
+            <h4>Humidity</h4>
+            <p id="humidity">50%</p>
+        </div>
+        <div class="sensor-box">
+            <h4>Temp</h4>
+            <p id="temp">23°C</p>
+        </div>
+        <div class="sensor-box">
+            <h4>Temp</h4>
+            <p id="temp">23°C</p>        
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="suggestions">
+        <h4>Suggestions</h4>
+        <p id="sunlight">60%</p>
+    </div>
+</div>
+
+<!-- Bottom Navigation Bar -->
+<div class="bottom-nav-space"></div>
+<div class="bottom-nav">
+    <div class="nav-item" onclick="navigateTo('home.html')">
+        <span class="icon">&#x1F3E0;</span>
+        <p>Home</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('search.html')">
+        <span class="icon">&#x1F50D;</span>
+        <p>Search</p>
+    </div>
+    <div class="central-btn" onclick="navigateTo('settings.html')">
+        <span class="icon">&#9881;</span>
+    </div>
+    <div class="nav-item" onclick="navigateTo('profile.html')">
+        <span class="icon">&#x1F464;</span>
+        <p>Profile</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('settings.html')">
+        <span class="icon">&#9881;</span>
+        <p>Settings</p>
+    </div>
+</div>
+
+<script>
+    // Function to simulate dynamic data update
+    function updateSensorData() {
+        document.getElementById('ph').textContent = Math.floor(Math.random() * 101) + '%';
+        document.getElementById('moisture').textContent = Math.floor(Math.random() * 101) + '%';
+        document.getElementById('humidity').textContent = Math.floor(Math.random() * 101) + '%';
+        document.getElementById('temp').textContent = (Math.floor(Math.random() * 40) + 10) + '°C';
+        document.getElementById('sunlight').textContent = Math.floor(Math.random() * 101) + '%';
+    }
+
+    // Simulate updating every 5 seconds
+    setInterval(updateSensorData, 5000);
+
+    // Navigation function
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+</script>
+
+</body>
+</html>

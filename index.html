@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollable Home Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-header {
+            background-color: #169c53;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            align-items: center;
+        }
+
+        .app-header h2 {
+            font-size: 20px;
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .info-section, .weather-section, .market-section {
+            padding: 20px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+            background-color: #f0f9f7;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .info-card img {
+            border-radius: 10px;
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .info-text h3 {
+            font-size: 16px;
+        }
+
+        .call-btn {
+            background-color: #169c53;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .weather-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .weather-info {
+            display: flex;
+            align-items: center;
+            background-color: #e8f9ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .weather-info img {
+            margin-right: 15px;
+        }
+
+        .weather-details h4 {
+            font-size: 18px;
+            color: #f5a623;
+            margin-bottom: 5px;
+        }
+
+        .market-section {
+            padding-bottom: 40px;
+        }
+
+        .market-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .market-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            overflow-y: auto;
+            max-height: 300px;
+        }
+
+        .market-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .market-item img {
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h2>Hi! Raj &#128075;</h2>
+            <span class="notification-icon">&#128276;</span> <!-- Bell emoji -->
+        </header>
+
+        <main>
+            <div style="text-align:; margin-top: 20px; margin-left: 20px;">
+                <h3>App Guide</h3>
+            </div>
+            
+            <section class="info-section">
+                <a href="https://example.com/how-to-use-app" class="info-card">
+                    <img src="https://pbs.twimg.com/media/GWxaXTBXMAABCPZ?format=jpg&name=medium" alt="How to use app" />
+                    <div class="info-text">
+                        <h3>How to use app</h3>
+                        <p>Learn about all the features of the app</p>
+                    </div>
+                </a>
+
+                <a href="https://example.com/contract-farming" class="info-card">
+                    <img src="https://via.placeholder.com/150x80" alt="Contract Farming" />
+                    <div class="info-text">
+                        <h3>Contract Farming</h3>
+                        <p>Grow crops for verified companies to make profits</p>
+                        <button class="call-btn">Get Call</button>
+                    </div>
+                </a>
+            </section>
+
+            <section class="weather-section">
+                <h3>Today's Weather</h3>
+                <div class="weather-info">
+                    <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-1024.png" alt="Weather Icon" style="width: 50px; height: 50px;">
+                    <div class="weather-details">
+                        <p>Akola, Maharashtra</p>
+                        <h4>23° Hazy Sunshine</h4>
+                        <p>High: 30°C / Low: 15°C</p>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="market-section">
+                <h3>Market Views</h3>
+                <div class="market-info">
+                    <a href="https://example.com/soybean" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Soybean" />
+                        <p>Soybean</p>
+                    </a>
+                    <a href="https://example.com/cotton" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Cotton" />
+                        <p>Cotton</p>
+                    </a>
+                    <a href="https://example.com/wheat" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Wheat" />
+                        <p>Wheat</p>
+                    </a>
+                    <a href="https://example.com/rice" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Rice" />
+                        <p>Rice</p>
+                    </a>
+                    <a href="https://example.com/pulses" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Pulses" />
+                        <p>Pulses</p>
+                    </a>
+                    <a href="https://example.com/maize" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Maize" />
+                        <p>Maize</p>
+                    </a>
+                    <a href="https://example.com/soybean" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Soybean" />
+                        <p>Soybean</p>
+                    </a>
+                    <a href="https://example.com/cotton" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Cotton" />
+                        <p>Cotton</p>
+                    </a>
+                    <a href="https://example.com/wheat" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Wheat" />
+                        <p>Wheat</p>
+                    </a>
+                    <a href="https://example.com/rice" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Rice" />
+                        <p>Rice</p>
+                    </a>
+                    <a href="https://example.com/pulses" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Pulses" />
+                        <p>Pulses</p>
+                    </a>
+                    <a href="https://example.com/maize" class="market-item">
+                        <img src="https://cdn.pixabay.com/photo/2024/04/25/10/49/capsicum-8719547_1280.jpg" alt="Maize" />
+                        <p>Maize</p>
+                    </a>
+                    <!-- Add more market items as needed -->
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
