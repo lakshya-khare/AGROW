@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Farm Control</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .app-container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        .controls-container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .control-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .control-item span {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .control-item span img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* Dropdown for 3 toggle options */
+        .control-dropdown {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Toast message styling */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 17px;
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="header">
+            <h1>Your Farm In Bhopal</h1>
+        </div>
+
+        <div class="controls-container">
+            <!-- Control for Lamp -->
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp"> Lamp</span>
+                <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp')">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
+
+            <!-- Control for Fan -->
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/fan.png" alt="Fan"> Fan</span>
+                <select class="control-dropdown" onchange="toggleSwitch(this, 'Fan')">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
+
+            <!-- Control for Water Pump -->
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Water Pump"> Water Pump</span>
+                <select class="control-dropdown" onchange="toggleSwitch(this, 'Water Pump')">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
+
+            <!-- Control for Filter Water Pump -->
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/filter.png" alt="Filter Water Pump"> Filter Water Pump</span>
+                <select class="control-dropdown" onchange="toggleSwitch(this, 'Filter Water Pump')">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast message -->
+    <div id="toast"></div>
+
+    <script>
+        // Function to show the toast message when toggle changes
+        function toggleSwitch(element, controlName) {
+            let state = element.value;
+            showToast(`${controlName} is set to ${state}`);
+        }
+
+        // Function to display toast message
+        function showToast(message) {
+            let toast = document.getElementById("toast");
+            toast.className = "toast show";
+            toast.textContent = message;
+
+            // Hide the toast after 3 seconds
+            setTimeout(function () {
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
 
