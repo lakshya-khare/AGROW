@@ -192,7 +192,7 @@
         <div class="controls-container">
             <!-- Master Toggle for Automation Mode -->
             <div class="master-toggle">
-                <span>Automation Mode</span>
+                <span><img src="https://img.icons8.com/emoji/48/robot.png" alt="Automation"> Automation Mode</span>
                 <div class="toggle-switch" onclick="toggleMasterSwitch(this)"></div>
             </div>
 
@@ -201,6 +201,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp"> Lamp</span>
                 <select class="control-dropdown" id="lamp-dropdown">
                     <option value="off">Off</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -210,7 +211,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 1"> Lamp 1</span>
                 <select class="control-dropdown" id="lamp1-dropdown">
                     <option value="off">Off</option>
-                    <option>Turn On</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -219,7 +220,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/fan.png" alt="Fan"> Fan</span>
                 <select class="control-dropdown" id="fan-dropdown">
                     <option value="off">Off</option>
-                    <option>Turn On</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -228,7 +229,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Water Pump"> Water Pump</span>
                 <select class="control-dropdown" id="waterpump-dropdown">
                     <option value="off">Off</option>
-                    <option>Turn On</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -237,7 +238,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Filter Water Pump"> Filter Water Pump</span>
                 <select class="control-dropdown" id="filterpump-dropdown">
                     <option value="off">Off</option>
-                    <option>Turn On</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -247,7 +248,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 2"> Lamp 2</span>
                 <select class="control-dropdown" id="lamp2-dropdown">
                     <option value="off">Off</option>
-                    <option>Turn On</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -256,7 +257,7 @@
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 3"> Lamp 3</span>
                 <select class="control-dropdown" id="lamp3-dropdown">
                     <option value="off">Off</option>
-                    <option>Turn On</option>
+                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
@@ -264,17 +265,19 @@
 
     </div>
 
-    <!-- Toast message -->
+    <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
     <script>
-        function toggleMasterSwitch(element) {
-            element.classList.toggle('active');
-            let isActive = element.classList.contains('active');
-
-            let newMode = isActive ? 'auto' : 'off';
-            setAllToMode(newMode);
-            showToast(isActive ? 'Farm is on Automation Mode' : 'Farm is turned OFF');
+        function toggleMasterSwitch(masterToggle) {
+            masterToggle.classList.toggle('active');
+            if (masterToggle.classList.contains('active')) {
+                setAllToMode('auto');
+                showToast('Farm is on automation mode');
+            } else {
+                setAllToMode('off');
+                showToast('Farm automation is turned off');
+            }
         }
 
         function setAllToMode(mode) {
