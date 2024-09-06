@@ -3,90 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrow Dashboard</title>
+    <title>Farm Stats Dashboard</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fcfcfc;
+            background-color: #f5f5f5;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            flex: 1;
-            padding-top: 20px;
-        }
-
-        .crop {
-            height: 250px;
-            margin-bottom: 20px;
-        }
-
-        .sensor-data {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            width: 100%;
+            align-items: center;
             margin-bottom: 10px;
         }
 
-        .sensor-box {
-            background-color:  #a3d67e;
-            padding: 10px;
+        .app-container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
             border-radius: 10px;
-            width: 100px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #a3d67ec0;
+            padding: 20px;
             text-align: center;
-            margin: 10px;
+            border-bottom: 2px solid #00b386;
+            position: relative;
         }
 
-        .sensor-box h4 {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #000000;
-        }
-
-        .sensor-box p {
-            font-size: 18px;
-            font-weight: bold;
-            color: #000;
-        }
-
-        .suggestions {
-            background-color:  #a3d67e;
-            padding: 10px;
+        /* Embedded Google Map */
+        .header iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
             border-radius: 10px;
-            width: 90%;
-            height: 400px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color:  #a3d67e47;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .issue{
+          color: rgba(255, 0, 0, 0.598);
+        }
+
+        .action{
+          color: rgb(0, 130, 0);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .stat-box {
+            background-color: #a3d67e47;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            margin: 10px;
-        }
-
-        .suggestions h4 {
-            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 5px;
-            color: #000000;
         }
 
-        .suggestions p {
+        .good {
+            color:#00b386;
+            
+        }
+
+        .bad {
+            color: #ff4d4d;
+        }
+
+        .medium {
+            color: #ffa500;
+        }
+
+        .stat-box h3 {
             font-size: 18px;
-            font-weight: bold;
-            color: #000;
+            margin-bottom: 5px;
         }
 
-        /* Bottom Navigation Bar */
-        .bottom-nav {
+        .stat-box p {
+            font-size: 14px;
+        }
+
+        .stat-box:hover {
+            background-color: #e7e6b3;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        /* Emoji styling */
+        .stat-box span {
+            font-size: 30px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+         /* Bottom Navigation Bar */
+         .bottom-nav {
+          margin-top: 20px;
             background-color: #ffffff;
             height: 60px;
             display: flex;
@@ -95,6 +130,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
         }
 
         .nav-item {
@@ -138,51 +174,77 @@
         .bottom-nav-space {
             height: 80px; /* Spacing for fixed bottom nav */
         }
+        
     </style>
 </head>
 <body>
+    <div class="app-container">
+        <!-- Header with Embedded Google Map -->
+        <div class="header">
+            <!-- Google Maps Embedded Code -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d456.7961375063751!2d77.52148484467587!3d23.24959832222421!2m3!1f270!2f0!3f0!3m2!1i1024!2i768!4f35!5e1!3m2!1sen!2sin!4v1725635613334!5m2!1sen!2sin" 
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <h1>Your Farm, Bhopal</h1>
+            <p>Crop health: Good | Weeds: 2%  <br> Harvest Projections: 118days </p>
+        </div>
 
-<div class="container">
+        <!-- Weather Info -->
+        <div class="weather-info">
+            <div>
+                <h2>Issue</h2>
+                <p class="issue">Over Moisture</p>
+                <p class="issue">High PH levels</p>
+            </div>
+            <div>
+                <h2>Action</h2>
+                <p class="action">Irrigations Delayed</p>
+                <p class="action">Sprayed Low PH Solution</p>
+            </div>
+        </div>
 
-    <img class="crop" src="https://pbs.twimg.com/media/GWsmRNFXYAAHpc0?format=jpg&name=small " alt="Crop Image">
+        <!-- Stats Grid -->
+        <div class="stats-container">
+            <div class="stat-box good" onclick="openPage('temperature.html')">
+                <span>🌡️</span> <!-- Emoji for Temperature -->
+                <h3>Temperature</h3>
+                <p>31°C</p>
+            </div>
 
-    <div class="sensor-data">
-        <div class="sensor-box">
-            <h4>Sunlight</h4>
-            <p id="sunlight">60%</p>
-        </div>
-        <div class="sensor-box">
-            <h4>PH Levels</h4>
-            <p id="ph">60%</p>
-        </div>
-        <div class="sensor-box">
-            <h4>Moisture</h4>
-            <p id="moisture">40%</p>
-        </div>
-        <div class="sensor-box">
-            <h4>Humidity</h4>
-            <p id="humidity">50%</p>
-        </div>
-        <div class="sensor-box">
-            <h4>Temp</h4>
-            <p id="temp">23°C</p>
-        </div>
-        <div class="sensor-box">
-            <h4>TDS</h4>
-            <p id="temp">23°C</p>        
+            <div class="stat-box good" onclick="openPage('humidity.html')">
+                <span>💧</span> <!-- Emoji for Humidity -->
+                <h3>Humidity</h3>
+                <p>54%</p>
+            </div>
+
+            <div class="stat-box bad" onclick="openPage('moisture.html')">
+                <span>🌧️</span> <!-- Emoji for Moisture -->
+                <h3>Moisture</h3>
+                <p class="bad">100% - Bad </p>
+            </div>
+
+            <div class="stat-box good" onclick="openPage('tds.html')">
+                <span>📏</span> <!-- Emoji for TDS -->
+                <h3>TDS</h3>
+                <p class="good">736 - Good</p>
+            </div>
+
+            <div class="stat-box good" onclick="openPage('water.html')">
+                <span>🚰</span> <!-- Emoji for Water -->
+                <h3>Water</h3>
+                <p>7</p>
+            </div>
+
+            <div class="stat-box medium" onclick="openPage('ph.html')">
+                <span>⚗️</span> <!-- Emoji for pH -->
+                <h3>pH</h3>
+                <p class="medium">14 - Medium</p>
+            </div>
         </div>
     </div>
 
-</div>
-
-<div class="container">
-    <div class="suggestions">
-        <h4>Suggestions</h4>
-        <p id="sunlight">60%</p>
-    </div>
-</div>
-
-<!-- Bottom Navigation Bar -->
+    <!-- Bottom Navigation Bar -->
 <div class="bottom-nav-space"></div>
 <div class="bottom-nav">
     <div class="nav-item" onclick="navigateTo('home.html')">
@@ -206,25 +268,16 @@
     </div>
 </div>
 
-<script>
-    // Function to simulate dynamic data update
-    function updateSensorData() {
-        document.getElementById('ph').textContent = Math.floor(Math.random() * 101) + '%';
-        document.getElementById('moisture').textContent = Math.floor(Math.random() * 101) + '%';
-        document.getElementById('humidity').textContent = Math.floor(Math.random() * 101) + '%';
-        document.getElementById('temp').textContent = (Math.floor(Math.random() * 40) + 10) + '°C';
-        document.getElementById('sunlight').textContent = Math.floor(Math.random() * 101) + '%';
-        document.getElementById('TDS').textContent = Math.floor(Math.random() * 101);
-    }
-
-    // Simulate updating every 5 seconds
-    setInterval(updateSensorData, 2000);
+    <script>
 
     // Navigation function
     function navigateTo(page) {
         window.location.href = page;
     }
-</script>
 
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
 </body>
 </html>
