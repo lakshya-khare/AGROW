@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden Control Dashboard</title>
+  <style>{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8f9;
+  }
+  
+  .dashboard {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    background-color: #a8e063;
+    padding: 40px;
+    text-align: center;
+    color: white;
+  }
+  
+  .weather-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .control-status {
+    padding: 20px;
+  }
+  
+  .control-status h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .control-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+  
+  .label {
+    flex-grow: 1;
+    padding-left: 10px;
+  }
+  
+  .status {
+    font-weight: bold;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }</style>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="header">
+      <div class="weather-info">
+        <div class="logo">
+          <img src="garden.png" alt="Garden Logo">
+          <h2>Family Garden Kendari</h2>
+        </div>
+      </div>
+    </div>
 
+    <div class="control-status">
+      <h2>Auto Farm Control</h2>
+      <ul>
+          <div class="control-item">
+            <span class="icon">💡</span>
+            <span class="label">Lamp</span>
+            <label class="switch">
+              <input type="checkbox" id="lamp-switch" onclick="toggleStatus('lamp')" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="control-item">
+            <span class="icon">🌬️</span>
+            <span class="label">Fan</span>
+            <label class="switch">
+              <input type="checkbox" id="fan-switch" onclick="toggleStatus('fan')">
+              <span class="slider round"></span>
+            </label>
+        </div>
+          <div class="control-item">
+            <span class="icon">💧</span>
+            <span class="label">Water Pump</span>
+            <label class="switch">
+              <input type="checkbox" id="water-pump-switch" onclick="toggleStatus('water-pump')" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="control-item">
+            <span class="icon">🔄</span>
+            <span class="label">Filter Water Pump</span>
+            <label class="switch">
+              <input type="checkbox" id="filter-water-pump-switch" onclick="toggleStatus('filter-water-pump')">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="control-item">
+            <span class="icon">💡</span>
+            <span class="label">Lamp</span>
+            <label class="switch">
+              <input type="checkbox" id="lamp-switch" onclick="toggleStatus('lamp')" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="control-item">
+            <span class="icon">💡</span>
+            <span class="label">Lamp</span>
+            <label class="switch">
+              <input type="checkbox" id="lamp-switch" onclick="toggleStatus('lamp')" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="control-item">
+            <span class="icon">💡</span>
+            <span class="label">Lamp</span>
+            <label class="switch">
+              <input type="checkbox" id="lamp-switch" onclick="toggleStatus('lamp')" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
