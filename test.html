@@ -35,7 +35,7 @@
             color: white;
             position: relative;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px 10px 0 0;
         }
 
@@ -44,7 +44,7 @@
             margin-top: 10px;
         }
 
-        /* Image background for header */
+        /* Larger image background for header */
         .header::before {
             content: "";
             background-image: url('assets/autologo.png');
@@ -92,7 +92,7 @@
             margin-right: 10px;
         }
 
-        /* Dropdown for 3 toggle options */
+        /* Dropdown for control items */
         .control-dropdown {
             background-color: #fff;
             border: 1px solid #ccc;
@@ -114,12 +114,6 @@
             font-weight: bold;
             color: #333;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .master-toggle span img {
-            width: 28px;
-            height: 28px;
-            margin-right: 10px;
         }
 
         .toggle-switch {
@@ -205,69 +199,61 @@
             <!-- Control for Lamp -->
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp"> Lamp</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp')">
+                <select class="control-dropdown" id="lamp-dropdown">
                     <option value="off">Off</option>
-                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
 
-            <!-- Control for Lamp 1 -->
+            <!-- More elements -->
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 1"> Lamp 1</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp 1')">
+                <select class="control-dropdown" id="lamp1-dropdown">
                     <option value="off">Off</option>
-                    <option value="on">On</option>
-                    <option value="auto">Auto Mode</option>
-                </select>
-            </div>
-
-            <!-- Add more elements to make it scrollable -->
-            <div class="control-item">
-                <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 2"> Lamp 2</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp 2')">
-                    <option value="off">Off</option>
-                    <option value="on">On</option>
-                    <option value="auto">Auto Mode</option>
-                </select>
-            </div>
-
-            <div class="control-item">
-                <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 3"> Lamp 3</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Lamp 3')">
-                    <option value="off">Off</option>
-                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
 
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/fan.png" alt="Fan"> Fan</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Fan')">
+                <select class="control-dropdown" id="fan-dropdown">
                     <option value="off">Off</option>
-                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
 
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Water Pump"> Water Pump</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Water Pump')">
+                <select class="control-dropdown" id="waterpump-dropdown">
                     <option value="off">Off</option>
-                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
 
             <div class="control-item">
                 <span><img src="https://img.icons8.com/color/48/000000/water-pump.png" alt="Filter Water Pump"> Filter Water Pump</span>
-                <select class="control-dropdown" onchange="toggleSwitch(this, 'Filter Water Pump')">
+                <select class="control-dropdown" id="filterpump-dropdown">
                     <option value="off">Off</option>
-                    <option value="on">On</option>
                     <option value="auto">Auto Mode</option>
                 </select>
             </div>
 
+            <!-- Add more items to make it scrollable -->
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 2"> Lamp 2</span>
+                <select class="control-dropdown" id="lamp2-dropdown">
+                    <option value="off">Off</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
+
+            <div class="control-item">
+                <span><img src="https://img.icons8.com/color/48/000000/light-on.png" alt="Lamp 3"> Lamp 3</span>
+                <select class="control-dropdown" id="lamp3-dropdown">
+                    <option value="off">Off</option>
+                    <option value="auto">Auto Mode</option>
+                </select>
+            </div>
         </div>
 
     </div>
@@ -279,12 +265,17 @@
         function toggleMasterSwitch(element) {
             element.classList.toggle('active');
             let isActive = element.classList.contains('active');
-            showToast(isActive ? 'Automation mode ON' : 'Automation mode OFF');
+
+            let newMode = isActive ? 'auto' : 'off';
+            setAllToMode(newMode);
+            showToast(isActive ? 'Farm is on Automation Mode' : 'Farm is turned OFF');
         }
 
-        function toggleSwitch(dropdown, controlName) {
-            let state = dropdown.value;
-            showToast(`${controlName} turned ${state}`);
+        function setAllToMode(mode) {
+            const dropdowns = document.querySelectorAll('.control-dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.value = mode;
+            });
         }
 
         function showToast(message) {
