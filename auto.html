@@ -108,6 +108,60 @@
             display: block;
         }
 
+         /* Bottom Navigation Bar */
+         .bottom-nav {
+            background-color: #ffffff;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .nav-item.active .icon {
+            color: #00C853;
+        }
+
+        .nav-item .icon {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .central-btn {
+            background-color: #43ab17;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .central-btn .icon {
+            font-size: 28px;
+            color: white;
+        }
+
+        .bottom-nav-space {
+            height: 80px; /* Spacing for fixed bottom nav */
+        }
+        
     </style>
 </head>
 <body>
@@ -175,7 +229,37 @@
         </div>
     </div>
 
+    <!-- Bottom Navigation Bar -->
+<div class="bottom-nav-space"></div>
+<div class="bottom-nav">
+    <div class="nav-item" onclick="navigateTo('home.html')">
+        <span class="icon">&#x1F3E0;</span>
+        <p>Home</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('market.html')">
+        <span class="icon">&#x1F50D;</span>
+        <p>Search</p>
+    </div>
+    <div class="central-btn" onclick="navigateTo('stats.html')">
+        <span class="icon">&#128752;</span>
+    </div>
+    <div class="nav-item" onclick="navigateTo('auto.html')">
+    <span class="icon">&#9881;</span>
+    <p>Settings</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('profile.html')">
+        <span class="icon">&#x1F464;</span>
+        <p>Profile</p>
+    </div>
+</div>
+
     <script>
+
+    // Navigation function
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+
         function openPage(page) {
             window.location.href = page;
         }
