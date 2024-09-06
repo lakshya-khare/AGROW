@@ -30,7 +30,7 @@
         }
 
         .header {
-            background-color: #e0f7e9;
+            background-color: #a3d67ec0;
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #00b386;
@@ -54,10 +54,18 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            background-color: #f0f9f7;
+            background-color:  #a3d67e81;
             border-radius: 10px;
             margin: 20px;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .issue{
+          color: rgba(255, 0, 0, 0.598);
+        }
+
+        .action{
+          color: rgb(0, 130, 0);
         }
 
         .stats-container {
@@ -68,12 +76,13 @@
         }
 
         .stat-box {
-            background-color: #f9f9f9;
+            background-color:  #a3d67e2f;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             cursor: pointer;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
         }
 
         .stat-box.good {
@@ -111,6 +120,7 @@
 
          /* Bottom Navigation Bar */
          .bottom-nav {
+          margin-top: 20px;
             background-color: #ffffff;
             height: 60px;
             display: flex;
@@ -119,6 +129,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
         }
 
         .nav-item {
@@ -181,14 +192,14 @@
         <!-- Weather Info -->
         <div class="weather-info">
             <div>
-                <h2>issue</h2>
-                <p>Over Mosture</p>
-                <p>High PH levels</p>
+                <h2>Issue</h2>
+                <p class="issue">Over Moisture</p>
+                <p class="issue">High PH levels</p>
             </div>
             <div>
                 <h2>Action</h2>
-                <p>Irrigations Delayed</p>
-                <p>Sprayed Low PH Solution</p>
+                <p class="action">Irrigations Delayed</p>
+                <p class="action">Sprayed Low PH Solution</p>
             </div>
         </div>
 
