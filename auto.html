@@ -16,8 +16,8 @@
   
   .dashboard {
     width: 100%;
-    max-width: ;
-    margin: 0px auto;
+    max-width: 400px;
+    margin: 20px auto;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
@@ -25,7 +25,7 @@
   }
   
   .header {
-    background-color: #a8e063;
+    background-color:  #43ab17;
     padding: 40px;
     text-align: center;
     color: white;
@@ -53,6 +53,8 @@
     margin-bottom: 10px;
     border-radius: 10px;
     align-items: center;
+    margin-right: 15px;
+    margin-left:-25px;
   }
   
   .icon {
@@ -111,19 +113,71 @@
   
   input:checked + .slider:before {
     transform: translateX(14px);
-  }</style>
+  }
+  
+  .bottom-nav {
+          margin-top: 20px;
+            background-color: #ffffff;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+
+        .nav-item.active .icon {
+            color: #00C853;
+        }
+
+        .nav-item .icon {
+            font-size: 24px;
+            color: #ccc;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .central-btn {
+            background-color: #43ab17;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 20px;
+            cursor: pointer;
+        }
+
+        .central-btn .icon {
+            font-size: 28px;
+            color: white;
+        }
+
+        .bottom-nav-space {
+            height: 80px; /* Spacing for fixed bottom nav */
+        }
+        </style>
 </head>
 <body>
   <div class="dashboard">
     <div class="header">
       <div class="weather-info">
-            <!-- Google Maps Embedded Code -->
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d456.7961375063751!2d77.52148484467587!3d23.24959832222421!2m3!1f270!2f0!3f0!3m2!1i1024!2i768!4f35!5e1!3m2!1sen!2sin!4v1725635613334!5m2!1sen!2sin" 
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+        <div class="logo">
           <img src="garden.png" alt="Garden Logo">
-          <h2>Your Farm, Bhopal</h2>
+          <h2>Family Garden Kendari</h2>
         </div>
       </div>
     </div>
@@ -190,6 +244,28 @@
       </ul>
     </div>
   </div>
+  <div class="bottom-nav-space"></div>
+<div class="bottom-nav">
+    <div class="nav-item" onclick="navigateTo('home.html')">
+        <span class="icon">&#x1F3E0;</span>
+        <p>Home</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('market.html')">
+        <span class="icon">&#x1F50D;</span>
+        <p>Search</p>
+    </div>
+    <div class="central-btn" onclick="navigateTo('stats.html')">
+        <span class="icon">&#128752;</span>
+    </div>
+    <div class="nav-item" onclick="navigateTo('auto.html')">
+    <span class="icon">&#9881;</span>
+    <p>Settings</p>
+    </div>
+    <div class="nav-item" onclick="navigateTo('profile.html')">
+        <span class="icon">&#x1F464;</span>
+        <p>Profile</p>
+    </div>
+</div>
 
   <script src="script.js"></script>
 </body>
