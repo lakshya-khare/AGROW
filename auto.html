@@ -54,7 +54,7 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            background-color:  #a3d67e81;
+            background-color:  #a3d67e47;
             border-radius: 10px;
             margin: 20px;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
@@ -76,7 +76,7 @@
         }
 
         .stat-box {
-            background-color:  #a3d67e2f;
+            background-color: #a3d67e47;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -85,16 +85,17 @@
             margin-bottom: 5px;
         }
 
-        .stat-box.good {
-            border: 2px solid #00b386;
+        .good {
+            color:#00b386;
+            
         }
 
-        .stat-box.bad {
-            border: 2px solid #ff4d4d;
+        .bad {
+            color: #ff4d4d;
         }
 
-        .stat-box.medium {
-            border: 2px solid #ffa500;
+        .medium {
+            color: #ffa500;
         }
 
         .stat-box h3 {
@@ -107,7 +108,7 @@
         }
 
         .stat-box:hover {
-            background-color: #f0f9f7;
+            background-color: #e7e6b3;
             transition: background-color 0.2s ease-in-out;
         }
 
@@ -220,13 +221,13 @@
             <div class="stat-box bad" onclick="openPage('moisture.html')">
                 <span>🌧️</span> <!-- Emoji for Moisture -->
                 <h3>Moisture</h3>
-                <p>100% - Bad</p>
+                <p class="bad">100% - Bad </p>
             </div>
 
             <div class="stat-box good" onclick="openPage('tds.html')">
                 <span>📏</span> <!-- Emoji for TDS -->
                 <h3>TDS</h3>
-                <p>736 - Good</p>
+                <p class="good">736 - Good</p>
             </div>
 
             <div class="stat-box good" onclick="openPage('water.html')">
@@ -238,7 +239,7 @@
             <div class="stat-box medium" onclick="openPage('ph.html')">
                 <span>⚗️</span> <!-- Emoji for pH -->
                 <h3>pH</h3>
-                <p>14 - Medium</p>
+                <p class="medium">14 - Medium</p>
             </div>
         </div>
     </div>
